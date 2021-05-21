@@ -13,6 +13,7 @@ Route::get("/main", [UserController::class, 'index']);
 Route::post('/main/checklogin', [UserController::class, 'checklogin']);
 Route::get('main/dashboard', [UserController::class, 'dashboard']);
 Route::get('main/logout', [UserController::class, 'logout']);
+Route::get('main/dashboard',[UserController::class, 'inde']);
 
 
 ?>

@@ -28,7 +28,6 @@ class TaskController extends Controller
             "task"        =>      $request->task,
             "user_id"     =>      $request->user_id
         );
-
         $task               =       Task::create($task_array);
         $taskObject = Task::where('id', $task->id)->get();
         if(!is_null($task)) {

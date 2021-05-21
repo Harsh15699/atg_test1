@@ -8,6 +8,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Hash;
 use Validator;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class UserController extends Controller
 {
@@ -65,6 +66,11 @@ class UserController extends Controller
          else
          {
               return back()->with('error', 'Wrong Login Details');}
+    }
+    public function inde(){
+      $id=Auth::user()->id;
+      $users = DB::select('select * from tasks where user_id='.$id);
+      return view('dashboard',['users'=>$users]);
     }
     function dashboard()
       {
